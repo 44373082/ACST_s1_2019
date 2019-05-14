@@ -1,0 +1,55 @@
+Q1
+cd ~/desktop/ACST890
+scp -i 44373082.pem twain.txt ubuntu@ec2-13-54-157-132.ap-southeast-2.compute.amazonaws.com:
+ssh -i 44373082.pem ubuntu@ec2-13-54-157-132.ap-southeast-2.compute.amazonaws.com
+sed -e 's/Huck/HucK/g' twain.txt
+Q2
+:~$ vi userargument.py
+a) ubuntu@ip-172-31-24-136:~$ python3 userargument.py python
+Hi, python. How are you?
+b) ubuntu@ip-172-31-24-136:~$ python3 userargument.py @!&^%
+-bash: !: event not found
+c) ubuntu@ip-172-31-24-136:~$ python3 userargument.py 1234
+Hi, 1234. How are you?
+d) ubuntu@ip-172-31-24-136:~$ python3 userargument.py Bob
+Hi, Bob. How are you?
+e) ubuntu@ip-172-31-24-136:~$ userargument.py Bob
+-bash: useargument.py: command not found
+f) ubuntu@ip-172-31-24-136:~$ python3 userargument.py Alice Bob
+Hi, Alice. How are you?
+Q3
+# Python program to check if the input year is a leap year or not
+
+year = int(input("Enter a year: "))
+
+# To get year (integer input) from the user
+# year = int(input("Enter a year: "))
+
+if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           print("{0} is a leap year".format(year))
+       else:
+           print("{0} is not a leap year".format(year))
+   else:
+       print("{0} is a leap year".format(year))
+else:
+   print("{0} is not a leap year".format(year))
+Q4
+import random
+a=int(input("Enter a="))
+b=int(input("Enter b="))
+print(random.randint(a,b))
+Q5
+m=int(input("Enter an integer for month m = "))
+d=int(input("Enter an integer for day d = "))
+if (m==3 and d>=20 and d<=31) or (m==6 and d>=1 and d<=20) or (m==4 and d>=1 and d<=30) or (m==5 and d>=1):
+    print("True")
+Q6
+print ("[Calculate the desired value]")
+import math
+rate=float(input("Interest rate compounded continuously r= "))
+years=int(input("The number of years t= "))
+principal=float(input("The principal P= "))
+future_value=principal*((1+rate)**years)
+print(round(future_value,2))
